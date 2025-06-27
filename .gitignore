@@ -1,7 +1,3 @@
-# Arquivos de Dados CSV
-planilha_ocorrencias_tratadas_as_csv.csv
-Levantamento_Cameras_PMF - GERAL.csv
-
 # Arquivos de cache e compilados do Python
 __pycache__/
 *.pyc
