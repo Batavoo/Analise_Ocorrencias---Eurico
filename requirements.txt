@@ -1,4 +1,4 @@
-// filepath: c:\Users\gustavo.arruda\Documents\Data Science\Analise_Ocorrencias - Eurico\requirements.txt
+// filepath: C:\Users\gustavo.arruda\Documents\Data Science\Analise_Ocorrencias - Eurico\requirements.txt
 streamlit
 pandas
 plotly-express
