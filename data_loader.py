@@ -10,9 +10,9 @@ def carregar_dados():
     """
     # --- 1. Carrega e processa os dados de OCORRÊNCIAS ---
     try:
-        df_ocorrencias = pd.read_csv('planilha_ocorrencias_tratadas_as_csv.csv', sep=';', encoding='utf-8')
+        df_ocorrencias = pd.read_csv('data_2.csv', sep=';', encoding='utf-8')
     except FileNotFoundError:
-        st.error("Arquivo 'planilha_ocorrencias_tratadas_as_csv.csv' não encontrado.")
+        st.error("Arquivo 'data_2.csv' não encontrado.")
         return pd.DataFrame()
 
     # Conversão de data/hora
@@ -42,7 +42,7 @@ def carregar_dados():
 
     # --- 2. Carrega e processa os dados das CÂMERAS ---
     try:
-        df_cameras = pd.read_csv('Levantamento_Cameras_PMF - GERAL.csv', sep=',')
+        df_cameras = pd.read_csv('data_1.csv', sep=',')
         colunas_interesse = ['Código', 'Qtd FIXA', 'Qtd PTZ', 'Regional', 'Bairro', 'Nome Câmera']
         df_cameras_info = df_cameras[colunas_interesse].copy()
         df_cameras_info.drop_duplicates(subset=['Código'], inplace=True)
@@ -70,7 +70,7 @@ def carregar_dados():
         return df_final
 
     except FileNotFoundError:
-        st.warning("Arquivo 'Levantamento_Cameras_PMF - GERAL.csv' não encontrado. Os dados não serão enriquecidos.")
+        st.warning("Arquivo 'data_1.csv' não encontrado. Os dados não serão enriquecidos.")
         # Se o arquivo de câmeras não for encontrado, cria a coluna 'tipo_camera' com valor padrão
         df_ocorrencias['tipo_camera'] = 'Indefinido'
         return df_ocorrencias
